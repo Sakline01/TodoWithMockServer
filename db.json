@@ -1,0 +1,107 @@
+{
+  "cars": [
+    {
+      "id": "1",
+      "name": "hundai",
+      "type": "hatchback",
+      "year": 2000,
+      "price": 1000,
+      "image": "https://bit.ly/3d9SwGQ"
+    },
+    {
+      "id": "2",
+      "name": "swift",
+      "type": "suv",
+      "year": 2000,
+      "price": 2000,
+      "image": "https://bit.ly/3d9SwGQ"
+    },
+    {
+      "id": "3",
+      "name": "audi",
+      "type": "suv",
+      "year": 2020,
+      "price": 10000,
+      "image": "https://bit.ly/3d9SwGQ"
+    },
+    {
+      "id": "4",
+      "name": "hundai",
+      "type": "hatchback",
+      "year": 1900,
+      "price": 1090,
+      "image": "https://bit.ly/3d9SwGQ"
+    },
+    {
+      "id": "5",
+      "name": "marcede",
+      "type": "hatchback",
+      "year": 2010,
+      "price": 10900,
+      "image": "https://bit.ly/3d9SwGQ"
+    },
+    {
+      "id": "6",
+      "name": "farari",
+      "type": "hatchback",
+      "year": 2000,
+      "price": 9900,
+      "image": "https://bit.ly/3d9SwGQ"
+    },
+    {
+      "id": "7",
+      "name": "RR",
+      "type": "suv",
+      "year": 1999,
+      "price": 3000,
+      "image": "https://bit.ly/3d9SwGQ"
+    },
+    {
+      "id": "8",
+      "name": "range rover",
+      "type": "hatchback",
+      "year": 1000,
+      "price": 10002,
+      "image": "https://bit.ly/3d9SwGQ"
+    },
+    {
+      "id": "9",
+      "name": "suzuki",
+      "type": "suv",
+      "year": 2000,
+      "price": 1000,
+      "image": "https://bit.ly/3d9SwGQ"
+    },
+    {
+      "id": "10",
+      "name": "hundai",
+      "type": "suv",
+      "year": 1980,
+      "price": 10700,
+      "image": "https://bit.ly/3d9SwGQ"
+    }
+  ],
+  "order": [],
+  "todo": [
+    {
+      "title": "hello",
+      "status": false,
+      "id": 1
+    },
+    {
+      "title": "hi",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "complete homework",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "Need to attend todays class",
+      "status": false,
+      "id": 4
+    }
+  ]
+}
