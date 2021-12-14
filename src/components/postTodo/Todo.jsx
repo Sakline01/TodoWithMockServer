@@ -31,14 +31,6 @@ const Todo = () => {
       PostTodo(payLoad)
         .then((res) => {
           console.table(res);
-
-          // GetTodo()
-          //   .then((res) => {
-          //     console.log(res);
-          //     setTodo(res.data);
-          //     setLoader(false)
-
-          //   })
           setLoader(false);
         })
     }
@@ -50,12 +42,6 @@ const Todo = () => {
         UpdateStatus(id, !status.status)
           .then((res) => {
             console.log(res)
-            // GetTodo()
-            //   .then((res) => {
-
-            //     setTodo(res.data)
-            //     setLoader(false)
-            //   })
             setLoader(false);
           })
         break;
@@ -68,14 +54,6 @@ const Todo = () => {
   const handleDelete = (id) => {
     setLoader(true)
     DeleteTodo(id).then((res) => {
-      //    console.log(res);
-      // GetTodo()
-      //   .then((res) => {
-      //     console.log(res);
-      //     setTodo(res.data);
-      //     setLoader(false)
-
-      //   })
       setLoader(false)
     })
     // setTodo(todo.filter((item)=>item.id!==id))
