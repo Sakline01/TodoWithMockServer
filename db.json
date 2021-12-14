@@ -84,24 +84,34 @@
   "order": [],
   "todo": [
     {
-      "title": "hello",
-      "status": false,
-      "id": 1
-    },
-    {
-      "title": "hi",
-      "status": false,
-      "id": 2
-    },
-    {
       "title": "complete homework",
-      "status": false,
+      "status": true,
       "id": 3
     },
     {
       "title": "Need to attend todays class",
       "status": false,
       "id": 4
+    },
+    {
+      "title": "new todo",
+      "status": true,
+      "id": 5
+    },
+    {
+      "title": "new todo 2",
+      "status": false,
+      "id": 6
+    },
+    {
+      "title": "new added",
+      "status": false,
+      "id": "36e07f6a-663f-494e-9cc8-2db1eae44b8c"
+    },
+    {
+      "title": "hello there",
+      "status": true,
+      "id": "ccc54939-61e9-4d3f-81af-dc110ab4f65b"
     }
   ]
 }
