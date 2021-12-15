@@ -3,23 +3,28 @@ import Input from "./Input";
 import Show from "./Show";
 import axios from "axios"
 import { v4 as uuid } from 'uuid';
+import style from './todo.module.css';
 import PostTodo, { DeleteTodo, UpdateStatus } from '../api/allrequest';
+import pagination from './page';
 
 const Todo = () => {
   const [todo, setTodo] = useState([]);
   const [loader, setLoader] = useState(false);
+  const [totalPage, setTotalPage] = useState([]);
+  const [recentPage, setRecentPage] = useState(1);
   useEffect(() => {
     const handleGetApi = async () => {
-      axios.get("http://localhost:3000/todo")
+      axios.get(`http://localhost:3000/todo?_page=${recentPage}&_limit=3`)
         .then(
           res => {
-            console.log("get", res);
+            const page = pagination(res.headers["x-total-count"]);
+            setTotalPage(page);
             setTodo(res.data);
           }
         )
     }
     handleGetApi();
-  }, [loader]);
+  }, [loader, recentPage]);
   const handleTaskCreate = (title) => {
     if (title) {
       const payLoad = {
@@ -30,7 +35,6 @@ const Todo = () => {
       setLoader(true)
       PostTodo(payLoad)
         .then((res) => {
-          console.table(res);
           setLoader(false);
         })
     }
@@ -41,15 +45,12 @@ const Todo = () => {
         setLoader(true)
         UpdateStatus(id, !status.status)
           .then((res) => {
-            console.log(res)
             setLoader(false);
           })
         break;
       }
 
-      //    console.log(status.status)
     }
-    console.log("handletoggle")
   }
   const handleDelete = (id) => {
     setLoader(true)
@@ -57,13 +58,10 @@ const Todo = () => {
       setLoader(false)
     })
     // setTodo(todo.filter((item)=>item.id!==id))
-    console.log("handledelete", uuid())
   }
-  const handleComplete = (id) => {
-    // setComplete(...complete,todo.filter((item)=>item.id===id))
-    // setTodo(todo.filter((item)=>item.id!==id))
-    // console.log(complete)
-    console.log("handlecomplete")
+
+  const handlePage = (e) => {
+    setRecentPage(e.target.value);
   }
   return (
     <>
@@ -72,10 +70,17 @@ const Todo = () => {
 
         loader ? <div>Loading....</div> : todo.map((item) => (
           <>
-            <Show key={item.id} handleComplete={handleComplete} handleDelete={handleDelete} handleToggle={handleToggle} id={item.id} title={item.title} status={item.status} />
+            <Show key={item.id} handleDelete={handleDelete} handleToggle={handleToggle} id={item.id} title={item.title} status={item.status} />
+
           </>
-        ))}
-      {/* <Showcomplete key={item.id} id={item.id} title={item.title} status={item.status}/> */}
+        ))
+      }
+      <h5>Page {recentPage}</h5>
+      <div className={style.pagination}>
+        {totalPage.map(page =>
+          <button key={uuid()} value={page} onClick={handlePage}>{page}</button>
+        )}
+      </div>
     </>
   );
 };

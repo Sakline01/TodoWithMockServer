@@ -1,0 +1,11 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+.pagination>button{
+    height: 30px;
+    width: 30px;
+    font-size: 17px;
+    margin: 2px;
+    border: rgb(194, 179, 179) solid 1px;
+}
